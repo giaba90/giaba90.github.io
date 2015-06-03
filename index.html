@@ -26,70 +26,51 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
-
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
+        <img src="img/Arduino_Logo.svg.png" class="arduino-img center-block">
+       <h1>Guida: installare i driver per Arduino Uno compatibile su Mac con OSX Yosemite</h1>
+       <p>Uno dei problemi più diffusi quando si acquista una board Arduino “compatibile” è che il nostro sistema operativo non riconosca i driver usb e quindi la periferica non sia presente nel menù dell’ IDE di Arduino sotto la voce Strumenti -> Porta .</p>
+       <img src="img/foto.jpg">
+       <br><br>
+       <p><b>SOLUZIONE:</b> bisogna installare dei driver appositi, che per nostra fortuna sono presenti per Mac, Linux e Windows.</p>
+      <p>Ecco come fare...</p>
+      <p>Innanzitutto bisogna scaricare a <a href="Driver_Arduino.zip"> questo link</a> i drivers e salvarli su nostro computer.</p>
+
+      <img src="img/fot.jpg"><br><br>
+
+      <p>Doppio click sul file appena scaricato (come mostrato nell’immagine precedente). Sul vostro computer verrà creata un cartella dal nome Driver Arduino. Entrateci dentro e troverete tre cartelle rinominate rispettivamente: CH341SER_LINUX, CH341SER_MAC e CH341SER_WIN. ( Gli utenti Apple  noteranno una quarta cartella dal nome _MACOSX , non fateci caso! )</p>
+      <br>
+      <p>Entrate nella cartella CH341SER_MAC e vi troverete 3 file come in figura</p>
+
+      <img src="img/fot1.jpg">
+      <br><br>
+      <p>Doppio click su ch34xinstall.pkg , seguite le istruzioni e cliccate sempre su continua.
+      Fatto questo arriva la parte più importante per il funzionamento dei nostri driver. Dovrete aprire il terminale, quindi recatevi in Applicazioni -> Utility (la cartella con il cacciavite e la chiave inglese) -> Terminale</p>
+      <p>Si aprirà una finestra come in foto </p>
+      <img src="img/terminale.jpg">
+    <br><br>
+
+    <p>Copiate questa istruzione  <code>sudo nvram boot-args=“kext-dev-mode=1”</code> e incollatela nel terminale. Premete il tasto INVIO sulla tastiera e vi verrà chiesto di inserire la password di sistema.
+    </p>
+    <p>Al termine dell’operazione RIAVVIATE il computer.</p>
+    <b>NOTA BENE:</b> Questa è un’operazione importante per portare al termine correttamente la procedura.</p>
+
+    <img src="img/riav.jpg">
+    <br><br>
+    <p>Una volta riavviato il computer , collegate prima la scheda Arduino con il cavo usb alla porta del vostro computer e poi aprire l’IDE di Arduino, andate in Strumenti -> Porte e vedrete una porta nuova </p>
       </div>
 
       <hr>
 
       <footer>
-        <p>&copy; Company 2015</p>
+        <p>Copyleft &copy; Giaba90 - All contents are delivered under GPL v3.0 license </p>
       </footer>
-    </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    </div> <!-- /container -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
         <script src="js/vendor/bootstrap.min.js"></script>
-
         <script src="js/main.js"></script>
     </body>
 </html>
